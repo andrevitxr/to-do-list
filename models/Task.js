@@ -4,7 +4,7 @@ const taskSchema = new mongoose.Schema({
     task: {
         type: String,
         require: true
-    },
+    }, 
     check: {
         type: Boolean,
         require: true
