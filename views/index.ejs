@@ -12,13 +12,13 @@
     <header>
 
         <% if (task == null) { %>
-            <h1>TO DO LIST</h1>
+            <h1><b>TO DO LIST!</b></h1>
         <form action="/create" method="post">
             <input type="text" name="task" id="task" autocomplete="off" placeholder="Insira uma tarefa">
             <button id="addButton" type="submit">Adicionar</button>
         </form>
         <% } else { %>
-            <h1>EDITAR TAREFA</h1>
+            <h1><b>EDITAR TAREFA:</b></h1>
         <form action="/updateOne/<%= task._id %>" method="post">
             <input type="text" name="task" id="task" autocomplete="off" value="<%= task.task %>">
             <button id="updateButton" type="submit">Atualizar</button>
@@ -55,7 +55,7 @@
             </div>
 
             <hr>
-            <p>Deseja realmente apagar a tarefa: "<%= taskDelete.task %>"? </p>
+            <p><B>Deseja realmente apagar a tarefa: "<%= taskDelete.task %>"?</B> </p>
             <div id="btns">
                 <a id="btnNot" href="/">Não</a>
                 <a id="btnYes" href="/deleteOne/<%= taskDelete._id %>">Sim</a>
@@ -63,7 +63,6 @@
         </div>
     </section>
     <% } %>
-
     <script src="script.js"></script>
 </body>
 </html>
