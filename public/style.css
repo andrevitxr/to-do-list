@@ -63,7 +63,6 @@ button {
     box-shadow: 3px 4px 0px 1px #000;
     border-radius: 4px;
     outline: none;
-    transition: all .3s ease-in-out;
     margin-left: 1rem;
 }
 
@@ -103,6 +102,7 @@ ul li {
 ul li a {
     text-decoration: none;
     color: #202024;
+    padding-left: 2rem;
 }
 
 ul li span {
@@ -134,7 +134,6 @@ a.btnUpdate {
 }
 
 a.btnUpdate:hover {
-    background: #3643f4;
     color: #fff;
     border-radius: 5px;
 }
@@ -146,7 +145,6 @@ a.btnDelete {
 }
 
 a.btnDelete:hover {
-    background: #ff0000;
     color: #fff;
     border-radius: 5px;
 }
@@ -172,6 +170,7 @@ div#card {
     border: 4px solid #000;
     box-shadow: 3px 4px 0px 1px #000;
     border-radius: 5px;
+    animation: slideDown 0.4s ease-out;
 }
 
 div#head {
@@ -233,7 +232,6 @@ div#btns a#btnNot {
     color:#ff0000;
     border: solid 4px #000000;
     margin-right: 1rem;
-    transition: all 0.3s ease-in-out;
     border-radius: 5px;
     box-shadow: 3px 4px 0px 1px #000;
     border-radius: 4px;
@@ -253,7 +251,6 @@ div#btns a#btnNot:focus {
 div#btns a#btnYes {
     color:#00aa2a;
     border: solid 4px #000000;
-    transition: all 0.3s ease-in-out;
     border-radius: 5px;
     box-shadow: 3px 4px 0px 1px #000;
     border-radius: 4px;
@@ -272,5 +269,98 @@ div#btns a#btnYes:focus {
 
 
 
+.message {
+    position: fixed;
+    top: 0;
+    left: 23%;
+    width: 30%;
+    transform: translate(-50%, -100%);
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    border: 4px solid #000;
+    box-shadow: 3px 4px 0px 1px #000;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+    z-index: 9999;
+  }
+
+  .message.slideOut {
+    animation: slideOut 0.5s forwards; /* Animação de saída */
+}
+  
+ /* Animação de entrada da mensagem */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -100%); /* Posição inicial */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0); /* Mantém centralizado horizontalmente e move para o topo */
+    }
+}
+
+/* Animação de saída da mensagem*/
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0); 
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -100%); 
+    }
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+ul li.check-true{
+    color: #202024;
+    text-decoration: line-through;
+    background-color: #b5ffac;
+}
+
+ul li a.check-true::before {
+    content: "";
+    position: absolute;
+    border: #000 solid;
+    top: 21px;
+    left: 16px;
+    height: 15px;
+    width: 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+ul li a.check-false::before {
+    content: "";
+    position: absolute;
+    border: #000 solid;
+    top: 21px;
+    left: 16px;
+    height: 15px;
+    width: 15px;
+    border-width: 2px 2px 2px 2px;
+}
 
 
