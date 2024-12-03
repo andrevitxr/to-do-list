@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connectToDb = () => {
     mongoose
     .connect(
-    "mongodb+srv://root:admin@cluster0.k3oyp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    process.env.DB_URI,
     )
     .then(() => {
     console.log("Conectado ao banco de dados MONGODB");

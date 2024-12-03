@@ -134,7 +134,7 @@ a.btnUpdate {
 }
 
 a.btnUpdate:hover {
-    color: #fff;
+    color: #ffffff;
     border-radius: 5px;
 }
 
@@ -145,7 +145,7 @@ a.btnDelete {
 }
 
 a.btnDelete:hover {
-    color: #fff;
+    color: #ff0000;
     border-radius: 5px;
 }
 

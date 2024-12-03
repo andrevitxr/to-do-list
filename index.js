@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const { env } = require("process");
 const path = require("path")
@@ -6,7 +7,7 @@ const connectToDb = require("./database/db");
 
 connectToDb();
 const app = express();
-const PORT = env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
